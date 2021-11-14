@@ -1,15 +1,19 @@
 <html>
-  <head>
-    <link rel="stylesheet" 
-     href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
-     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
-     crossorigin="anonymous">
-    </head>
+
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
 <body>
-  <h1>teste</h1>
-  <form action="{% url 'segunda' %}">
-    <input type='submit' value='Outra página' />
-  </form>
+  <div class="row" style="justify-content: center">
+    <h1>Homepage</h1>
+  </div>
+  <div class="row" style="justify-content: center">
+    <a href="{% url 'myapp:playersList' %}">
+      Lista de jogadores
+    </a>
+  </div>
 </body>
 
 </html>
