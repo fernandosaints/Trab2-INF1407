@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Lista Jogadores</title>
+  <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+</head>
+
+<body>
+  {% include 'myapp/links.html' %}
+  <h1>Lista de Jogadores</h1>
+  <h6>playersList.html</h6>
+  <table>
+    <tr>
+      <th>Nome</th>
+      <th>Time</th>
+      <th>Nação</th>
+    </tr>
+    {% for player in players %}
+    <tr>
+      <td>{{ player.name }}</td>
+      <td>{{player.team }}</td>
+      <td>{{ player.nation }}</td>
+    </tr>
+    {% empty %}
+    <tr>
+      <th colspan="5">Ainda não tem jogadores cadastrados</th>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+
+</html>

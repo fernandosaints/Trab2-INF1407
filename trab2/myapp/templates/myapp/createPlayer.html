@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cria Jogador</title>
+  <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+</head>
+
+<body>
+  {% include 'myapp/links.html' %}
+  <h1>Cria um jogador</h1>
+  <h6>createPlayer.html</h6>
+  <form action="" method="POST">
+    {% csrf_token %}
+    <table class='formulario'>
+      {{ formulario.as_table}}
+    </table>
+    <button type="submit">Cria jogador</button>
+  </form>
+</body>
+
+</html>

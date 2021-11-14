@@ -1,0 +1,18 @@
+<!--
+Para incluir esse fragmento de página HTML
+em uma página HTML use:
+{ % include 'contatos/links.html' % }
+-->
+<a href="/">
+  Home-Page
+</a> |
+<a href="{% url 'myapp:home' %}">
+  Página inicial
+</a> |
+<a href="{% url 'myapp:playersList' %}">
+  Listar contatos
+</a> |
+<a href="{% url 'myapp:createPlayer' %}">
+  Cadastrar contato
+</a>
+<hr>
