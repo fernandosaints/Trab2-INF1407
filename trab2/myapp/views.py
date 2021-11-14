@@ -6,6 +6,7 @@ from django.views.generic.base import View
 from myapp.forms import PlayerModel2Form
 from django.http.response import HttpResponseRedirect
 from django.urls.base import reverse_lazy
+from django.http import JsonResponse
 
 # Create your views here.
 def home(request):
@@ -33,6 +34,15 @@ class PlayerCreateView(View):
       player.save()
       return HttpResponseRedirect(reverse_lazy(
       "myapp:playersList"))
+
+  def checkPlayer(request):
+    player = request.GET.get("name", None)
+    response = {
+    'existe':
+    Player.objects.filter(player__iexact=player)
+    .exists()}
+    return JsonResponse(response)
+
 
 class PlayerUpdateView(View):
   def get(self, request, pk, *args, **kwargs):
