@@ -24,7 +24,8 @@
       <td>{{ player.name }}</td>
       <td>{{player.team }}</td>
       <td>{{ player.nation }}</td>
-      <td><a href="{% url 'myapp:updatePlayer' pk=player.id %}">Atualizar</a>
+      <td><a href="{% url 'myapp:updatePlayer' pk=player.id %}">Atualizar</a> | 
+        <a href="{% url 'myapp:deletePlayer' pk=player.id %}">Excluir</a></td>
       </td>
     </tr>
     {% empty %}

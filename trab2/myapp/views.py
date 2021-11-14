@@ -52,6 +52,21 @@ class PlayerUpdateView(View):
       context = {'player': formulario, }
       return render(request, 'myapp/updatePlayer.html', context)
 
+class PlayerDeleteView(View):
+  def get(self, request, pk, *args, **kwargs):
+    player = Player.objects.get(pk=pk)
+    context = {'player': player, }
+    return render(
+    request, 'myapp/deletePlayer.html', 
+    context)
+  def post(self, request, pk, *args, **kwargs):
+    player = Player.objects.get(pk=pk)
+    player.delete()
+    print("Deleting player...", pk)
+    return HttpResponseRedirect(
+    reverse_lazy("myapp:playersList"))
+
+
 
 def segundaPagina(request):
  # processamento antes de mostrar

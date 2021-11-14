@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Deletar Jogador</title>
+</head>
+
+<body>
+  {% include 'myapp/links.html' %}
+  <h1>Deletar Jogador</h1>
+  <form method="POST">
+    {% csrf_token %}
+    Confirma a remoção de {{ player.name }}?<br>
+    <button>
+      <a href="{% url 'myapp:playersList' %}" style="text-decoration: none; color: black;">Cancelar</a>
+    </button>
+    <input type="submit" value="Remove">
+  </form>
+</body>
+
+</html>
