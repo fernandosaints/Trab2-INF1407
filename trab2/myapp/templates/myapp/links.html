@@ -5,22 +5,28 @@ em uma página HTML use:
 -->
 {% load static %}
 <head>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
 </head>
 <div class="row" style="justify-content: center">
-  <a href="/" class="header-option">
-    Homepage
-  </a> |
-  <a href="{% url 'myapp:home' %}" class="header-option">
-    Página inicial
-  </a> |
-  <a href="{% url 'myapp:playersList' %}" class="header-option">
-    Listar jogadores
-  </a> |
-  <a href="{% url 'myapp:createPlayer' %}" class="header-option">
-    Cadastrar jogador
-  </a>
+    <p>Usuário logado: {% firstof user.first_name user.username %}</p>
+</div>
+<div class="row" style="justify-content: center">
+    <a href="/" class="header-option">
+        Homepage
+    </a> |
+    <a href="{% url 'myapp:home' %}" class="header-option">
+        Página inicial
+    </a> |
+    <a href="{% url 'myapp:playersList' %}" class="header-option">
+        Listar jogadores
+    </a> |
+    <a href="{% url 'myapp:createPlayer' %}" class="header-option">
+        Cadastrar jogador
+    </a> |
+    <a href="{% url 'logout' %}" class="header-option">
+        Sair da conta
+    </a>
 </div>
 <hr>

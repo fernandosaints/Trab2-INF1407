@@ -19,9 +19,17 @@ from django.urls import path
 from myapp import views
 from myapp import urls as myAppUrls
 
+from django.contrib.auth.views import LoginView, LogoutView
+from django.urls.base import reverse_lazy
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('index/', views.index, name='index'),
     path('', views.home, name='homepage'),
     path('SegundaPagina/', views.segundaPagina, name='segunda'),
     path('myapp/', include(myAppUrls)),
+    path('register/', views.register_new_account, name='register'),
+    path('login/', LoginView.as_view(template_name='login.html'), name='login'),
+    path('logout/', LogoutView.as_view(next_page=reverse_lazy('index')), name='logout'),
+    path('accounts/profile/', views.home, name='profile'),
 ]
