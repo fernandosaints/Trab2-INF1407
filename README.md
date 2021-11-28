@@ -19,4 +19,4 @@ Ao entrar no site, o usuário tem a possibilidade de criar uma conta ou fazer lo
 
 Acessando a homepage do programa, o usuário tem a opção de ir para a lista de jogadores, onde através das opções para cada jogador (exclusão e atualização) e da barra de opções na parte superior da tela, o usuário pode gerenciar e adicionar novos jogadores ao sistema.
 
-Por fim, temos a opção de sair da conta onde o usuário e deslogado do sistema e redirecionado para a tela inicial.
+Por fim, temos a opção de sair da conta onde o usuário é deslogado do sistema e redirecionado para a tela inicial.
