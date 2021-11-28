@@ -40,12 +40,12 @@ class PlayerCreateView(View):
             return HttpResponseRedirect(reverse_lazy(
                 "myapp:playersList"))
 
-    def checkPlayersCountDatabase(request):
-        response = {
-            'playersCount':
-                len(Player.objects.all())
-                    .exists()}
-        return JsonResponse(response)
+def checkPlayersCountDatabase(request):
+  response = {
+    'playersCount':
+      len(Player.objects.all())
+      }
+  return JsonResponse(response)
 
 
 class PlayerUpdateView(View):

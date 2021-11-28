@@ -7,4 +7,5 @@ urlpatterns = [
   path('list/', views.PlayerListView.as_view(), name='playersList'),
   path('delete/<int:pk>/', views.PlayerDeleteView.as_view(), name='deletePlayer'),
   path('', views.PlayerListView.as_view(), name='home'),
+  path("checkPlayersCountDatabase/", views.checkPlayersCountDatabase,  name='checkPlayersCountDatabase'),
  ]

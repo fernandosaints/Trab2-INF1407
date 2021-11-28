@@ -11,11 +11,12 @@
   onload = function () {
     var playersCountField = document.getElementById('players-count');
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", "{% url 'checkPlayersCountDatabase' %}", true);
+    xmlhttp.open("GET", "/myapp/checkPlayersCountDatabase", true);
     xmlhttp.onreadystatechange = function () {
       if (xmlhttp.status == 200 && xmlhttp.readyState == 4) {
         var resposta = JSON.parse(xmlhttp.responseText);
-        playersCountField.value = resposta.playersCount;
+        document.getElementById('players-count-value').replaceChild(document.createTextNode(resposta.playersCount), 
+          document.getElementById('players-count-value').firstChild);
       }
     };
     xmlhttp.send(null);
@@ -27,7 +28,7 @@
   {% include 'myapp/links.html' %}
   <h1>Cria um jogador</h1>
   <h6>createPlayer.html</h6>
-  <h3 id="players-count">Número de jogadores no sistema: 0</h3>
+  <h3 id="players-count">Número de jogadores no sistema: <span id="players-count-value">0</span></h3>
   <form action="" method="POST">
     {% csrf_token %}
     <table class='formulario'>
