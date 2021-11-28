@@ -4,7 +4,7 @@
 
 Domínio oficial do site: https://trab2-inf1407.herokuapp.com/
 
-##Sobre o site
+## Sobre o site
 O site implementado é uma plataforma voltada para usuários que desejam cadastrar seus jogadores favoritos e visualizá-los em uma formato de lista sempre que possível. O sistema também permite atualizar as informações dos jogadores ou até mesmo excluí-los da lista.
 
 ## O que foi desenvolvido?
