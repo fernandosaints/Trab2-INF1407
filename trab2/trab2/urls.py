@@ -24,8 +24,8 @@ from django.urls.base import reverse_lazy
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', views.index, name='index'),
-    path('', views.home, name='homepage'),
+    path('', views.index, name='index'),
+    path('home/', views.home, name='homepage'),
     path('SegundaPagina/', views.segundaPagina, name='segunda'),
     path('myapp/', include(myAppUrls)),
     path('register/', views.register_new_account, name='register'),
