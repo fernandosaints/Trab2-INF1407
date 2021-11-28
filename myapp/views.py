@@ -18,7 +18,7 @@ def home(request):
 
 class PlayerListView(View):
     def get(self, request, *args, **kwargs):
-        players = Player.objects.all()
+        players = Player.objects.filter(creator=str(request.user))
         context = {'players': players, }
         return render(
             request,
@@ -36,6 +36,7 @@ class PlayerCreateView(View):
         formulario = PlayerModel2Form(request.POST)
         if formulario.is_valid():
             player = formulario.save()
+            player.creator = str(request.user)
             player.save()
             return HttpResponseRedirect(reverse_lazy(
                 "myapp:playersList"))
