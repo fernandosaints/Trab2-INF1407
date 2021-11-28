@@ -13,7 +13,7 @@ em uma página HTML use:
     <p>Usuário logado: {% firstof user.first_name user.username %}</p>
 </div>
 <div class="row" style="justify-content: center">
-    <a href="/" class="header-option">
+    <a href="/home" class="header-option">
         Homepage
     </a> |
     <a href="{% url 'myapp:home' %}" class="header-option">

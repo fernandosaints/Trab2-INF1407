@@ -98,7 +98,7 @@ def register_new_account(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("homepage")
+            return redirect("index")
         else:
             context = {
                 'form': form
